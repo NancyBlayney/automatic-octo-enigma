@@ -1,27 +1,28 @@
 <?php
-	class Post{
-		private $name;
 
-		public function __set($name, $value){
-			echo 'Setting '.name.' to <strong>'.$value.'</strong><br>';
-			$this->name = $value;
+	class First{
+		public $id = 23;
+		public $name = 'Nancy';
+
+
+		public function saySomething($word){
+			echo $word.'Something...';
 		}
-
-		public function __get($name){
-			echo 'Getting '.$name.' <strong>'.$this->name.'</strong><br>'; 
-		}
-
-		public function __isset($name){
-			echo 'Is '.$name.' set?<br>';
-			return isset($this->name);
-		}
-
 
 	}
 
-	$post = new Post;
-	$post->name = 'Nancy';
-	echo $post->name;
-	var_dump(isset($post->name));
+	class Second extends First{
+		public function getName(){
+			echo $this->name;
+		}
+	}
+
+$new = new Second;
+echo $new->name;
+$new->saySomething('Hello World');
+
+
+
+
 
 ?>
