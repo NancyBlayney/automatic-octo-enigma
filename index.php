@@ -1,28 +1,27 @@
 <?php
 
-	class First{
-		public $id = 23;
-		public $name = 'Nancy';
+	class User{
+		public $username;
+		public static $minPassLength = 5;
 
-
-		public function saySomething($word){
-			echo $word.'Something...';
-		}
-
-	}
-
-	class Second extends First{
-		public function getName(){
-			echo $this->name;
+		public static function validatePassword($password){
+			if(strlen($password) >= self::$minPassLength){
+				return true;
+			} else {
+				return false;
+			}
 		}
 	}
 
-$new = new Second;
-echo $new->name;
-$new->saySomething('Hello World');
+	// $password = 'password';
+
+	// if(User::validatePassword($password)){
+	// 	echo 'Password is long enough';
+	// } else {
+	// 	echo 'not valid';
+	// }
 
 
-
-
+echo User::$minPassLength;
 
 ?>
