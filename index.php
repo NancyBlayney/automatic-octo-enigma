@@ -1,44 +1,13 @@
 <?php
+spl_autoload_register(function($class_name){
+	include $class_name . '.php';
+});
 
-	abstract class Animal{
-		public $name;
-		public $color;
+$foo = new Foo;
+$bar = new Bar;
 
-		public function describe(){
-			return $this->name.' is '.$this->color;
-		}
+$bar->sayHello();
 
-		abstract public function makesSound();
-
-	}
-
-	class Duck extends Animal{
-		public function describe(){
-			return parent::describe();
-		}
-
-		public function makesSound(){
-			return 'Quack';
-		}
-
-	}
-
-	class Dog extends Animal{
-		public function describe(){
-			return parent::describe();
-		}
-
-		public function makesSound(){
-			return 'Woof';
-		}
-
-	}
-
-$duck = new Dog();
-$duck->name = 'Ben';
-$duck->color = 'Blue';
-echo $duck->describe();
-echo $duck->makesSound();
 
 
 
