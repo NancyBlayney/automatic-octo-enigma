@@ -7,17 +7,22 @@
 		protected $person4 = 'John';
 		private $person5 = 'Nancy';
 
-		function iterateObject(){
-			foreach($this as $key => $value){
-				print "$key => $value\n";
-			}
-		}
+		// function iterateObject(){
+		// 	foreach($this as $key => $value){
+		// 		print "$key => $value\n";
+		// 	}
+		// }
+
 
 
 	}
 
 	$people = new People;
-	$people -> iterateObject();
+
+	foreach($people as $key=>$value){
+		print "$key => $value\n";
+	}
+	// $people -> iterateObject();
 
 
 ?>
